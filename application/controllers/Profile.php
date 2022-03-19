@@ -19,7 +19,7 @@ class Profile extends CI_Controller {
 		$data['user'] = $id = $this->ion_auth->user()->row();
 		// var_dump($data['user']);
         $data['crumb'] = [
-            'Profile' => '',
+            'Profil' => '',
         ];
         //$this->layout->set_privilege(1);
         $data['page'] = 'profile';
