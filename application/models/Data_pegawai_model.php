@@ -45,7 +45,7 @@ class Data_pegawai_model extends CI_Model
     {
         $this->db->select('count(*) as "total"');
         $this->db->order_by($this->id, $this->order);
-        $this->db->where('status_verif', '1');
+        $this->db->where('status_verif!="2"');
         return $this->db->get($this->table)->row();
     }
 

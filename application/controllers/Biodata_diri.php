@@ -21,6 +21,7 @@ class Biodata_diri extends CI_Controller
     {
         $id = $this->ion_auth->user()->row()->id;
         $row = $this->Data_pegawai_model->get_by_id_join($id);
+        // echo $this->db->last_query();
         $data = array(
                 'button' => 'Ubah',
                 'action' => site_url('biodata_diri/update_action'),
