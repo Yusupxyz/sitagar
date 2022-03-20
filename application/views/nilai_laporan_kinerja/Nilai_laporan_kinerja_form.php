@@ -25,7 +25,7 @@
             <input type="file" class="form-control" name="laporan" id="laporan" accept="application/pdf"/>
         </div>
 	    <button type="submit" class="btn btn-primary"><?php echo $button ?></button> 
-	    <a href="<?php echo site_url('laporan_kinerja') ?>" class="btn btn-default">Cancel</a>
+	    <a href="<?php echo site_url('laporan_kinerja') ?>" class="btn btn-default">Batal</a>
 	</form>
          </div>
         </div>

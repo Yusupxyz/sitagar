@@ -60,12 +60,12 @@
                 <td><?php echo $laporan_kinerja->kegiatan ?></td>
                 <td><a target="_blank" href="<?php echo site_url('./assets/uploads/laporan/'.$laporan_kinerja->laporan) ?>" class="link-primary">Lihat Berkas Laporan</a></td>
                 <td><?php echo $laporan_kinerja->skor." (".$laporan_kinerja->kategori." - ".$laporan_kinerja->keterangan.")" ?><br>
-                <a target="_blank" href="<?php echo site_url('nilai/read/'.$laporan_kinerja->id) ?>" class="link-primary">Lihat Detail Nilai</a>
+                <a target="_blank" href="<?php echo site_url('nilai/read/'.$laporan_kinerja->id_laporan_kinerja) ?>" class="link-primary">Lihat Detail Nilai</a>
 
             </td>
                 <td style="text-align:center" width="200px">
 				<?php 
-		            echo anchor(site_url('nilai/update/'.$laporan_kinerja->id),' <i class="fa fa-edit"></i>', 'class="btn btn-xs btn-warning" data-toggle="tooltip" title="Edit"'); 
+		            echo anchor(site_url('nilai/update/'.$laporan_kinerja->id_laporan_kinerja),' <i class="fa fa-edit"></i>', 'class="btn btn-xs btn-warning" data-toggle="tooltip" title="Edit"'); 
 				?>
 			</td>
 		</tr>

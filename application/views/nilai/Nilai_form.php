@@ -50,7 +50,7 @@
             <input type="text" class="form-control" name="kecepatan" id="kecepatan" placeholder="Kecepatan" value="<?php echo $kecepatan; ?>" />
         </div>
 	    <button type="submit" class="btn btn-primary"><?php echo $button ?></button> 
-	    <a href="<?php echo site_url('nilai') ?>" class="btn btn-default">Cancel</a>
+	    <a href="<?php echo site_url('nilai_laporan_kinerja') ?>" class="btn btn-default">Batal</a>
 	</form>
          </div>
         </div>
