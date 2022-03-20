@@ -40,6 +40,15 @@ class Data_pegawai_model extends CI_Model
         return $this->db->get($this->table)->row();
     }
 
+    // count all non verif
+    function count_nonverif_all()
+    {
+        $this->db->select('count(*) as "total"');
+        $this->db->order_by($this->id, $this->order);
+        $this->db->where('status_verif', '1');
+        return $this->db->get($this->table)->row();
+    }
+
     // get data by id
     function get_by_id($id)
     {
