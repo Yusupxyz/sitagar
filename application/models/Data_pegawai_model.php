@@ -146,7 +146,7 @@ class Data_pegawai_model extends CI_Model
 
     // get data with limit and search berkas
     function get_limit_data_berkas($limit, $start = 0, $q = NULL) {
-        $this->db->select('*,data_pegawai.id as"dp_id"');
+        $this->db->select('*,data_pegawai.id as "dp_id"');
         $this->db->order_by($this->id, $this->order);
         $this->db->like('data_pegawai.id', $q);
 	$this->db->or_like('nama', $q);

@@ -32,6 +32,7 @@ class Verifikasi extends CI_Controller
         $config['page_query_string'] = TRUE;
         $config['total_rows'] = $this->Data_pegawai_model->total_rows_berkas($q);
         $data_pegawai = $this->Data_pegawai_model->get_limit_data_berkas($config['per_page'], $start, $q);
+        // echo $this->db->last_query();
 
         $this->load->library('pagination');
         $this->pagination->initialize($config);
