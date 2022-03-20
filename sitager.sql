@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 18, 2022 at 08:49 AM
+-- Generation Time: Mar 20, 2022 at 06:33 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.27
 
@@ -100,7 +100,6 @@ CREATE TABLE `groups_menu` (
 INSERT INTO `groups_menu` (`id_groups`, `id_menu`) VALUES
 (1, 8),
 (1, 89),
-(1, 4),
 (1, 42),
 (1, 43),
 (1, 44),
@@ -170,15 +169,6 @@ CREATE TABLE `login_attempts` (
   `time` int(11) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `login_attempts`
---
-
-INSERT INTO `login_attempts` (`id`, `ip_address`, `login`, `time`) VALUES
-(44, '::1', 'admin@admin.com', 1647348124),
-(45, '::1', 'admin@admin.com', 1647348124),
-(46, '::1', 'admin@admin.com', 1647348161);
-
 -- --------------------------------------------------------
 
 --
@@ -204,22 +194,21 @@ CREATE TABLE `menu` (
 INSERT INTO `menu` (`id_menu`, `sort`, `level`, `parent_id`, `icon`, `label`, `link`, `id`, `id_menu_type`) VALUES
 (1, 0, 1, 0, 'empty', 'NAVIGASI UTAMA', '#', '#', 1),
 (3, 1, 2, 1, 'fas fa-tachometer-alt', 'Beranda', 'dashboard', '#', 1),
-(4, 12, 2, 40, 'fas fa-table', 'CRUD Generator', 'crudbuilder', '1', 1),
-(8, 10, 2, 40, 'fas fa-bars', 'Menu', 'cms/menu/side-menu', 'navMenu', 1),
-(40, 9, 1, 0, 'empty', 'SETTING', '#', '#', 1),
-(42, 13, 2, 40, 'fas fa-users-cog', 'User', '#', '1', 1),
-(43, 14, 3, 42, 'fas fa-angle-double-right', 'Users', 'users', '1', 1),
-(44, 15, 3, 42, 'fas fa-angle-double-right', 'Groups', 'groups', '2', 1),
-(89, 11, 2, 40, 'fas fa-th-list', 'Menu Type', 'menu_type', 'menu_type', 1),
+(8, 12, 2, 40, 'fas fa-bars', 'Menu', 'cms/menu/side-menu', 'navMenu', 1),
+(40, 10, 1, 0, 'empty', 'SETTING', '#', '#', 1),
+(42, 14, 2, 40, 'fas fa-users-cog', 'User', '#', '1', 1),
+(43, 15, 3, 42, 'fas fa-angle-double-right', 'Users', 'users', '1', 1),
+(44, 16, 3, 42, 'fas fa-angle-double-right', 'Groups', 'groups', '2', 1),
+(89, 13, 2, 40, 'fas fa-th-list', 'Menu Type', 'menu_type', 'menu_type', 1),
 (90, 2, 1, 0, 'empty', 'UTAMA', '#', '#', 1),
-(91, 6, 2, 90, 'fas fa-address-book', 'Data Pegawai Honorer', 'data_pegawai', '1', 1),
-(92, 8, 2, 90, 'fas fa-database', 'Nilai Laporan Kinerja', 'nilai_laporan_kinerja', '2', 1),
-(93, 7, 2, 90, 'fas fa-check', 'Verifikasi Data', 'verifikasi', '2', 1),
-(94, 3, 2, 90, 'far fa-address-card', 'Biodata Diri', 'biodata_diri', '1', 1),
-(95, 4, 2, 90, 'far fa-arrow-alt-circle-up', 'Unggah Berkas', 'data_berkas', '2', 1),
-(97, 5, 2, 90, 'fas fa-align-center', 'Laporan Kinerja', 'laporan_kinerja', '4', 1),
-(98, 1, 2, 90, 'far fa-address-card', 'Data Pegawai Honorer', 'daftar_pegawai', '1', 1),
-(99, 1, 2, 40, 'far fa-calendar-alt', 'Kategori Nilai', 'kategori', '1', 1);
+(91, 7, 2, 90, 'fas fa-address-book', 'Data Pegawai Honorer', 'data_pegawai', '1', 1),
+(92, 9, 2, 90, 'fas fa-database', 'Nilai Laporan Kinerja', 'nilai_laporan_kinerja', '2', 1),
+(93, 8, 2, 90, 'fas fa-check', 'Verifikasi Data', 'verifikasi', '2', 1),
+(94, 4, 2, 90, 'far fa-address-card', 'Biodata Diri', 'biodata_diri', '1', 1),
+(95, 5, 2, 90, 'far fa-arrow-alt-circle-up', 'Unggah Berkas', 'data_berkas', '2', 1),
+(97, 6, 2, 90, 'fas fa-align-center', 'Laporan Kinerja', 'laporan_kinerja', '4', 1),
+(98, 3, 2, 90, 'far fa-address-card', 'Data Pegawai Honorer', 'daftar_pegawai', '1', 1),
+(99, 11, 2, 40, 'far fa-calendar-alt', 'Kategori Nilai', 'kategori', '1', 1);
 
 -- --------------------------------------------------------
 
@@ -293,9 +282,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`, `id_member`, `foto`) VALUES
-(1, '127.0.0.1', 'administrator', '$2y$08$mr9S/fF7pRzaQNd6KGHGkOATYnjBkZal85.Sk3XeO6uqTmftcNriq', '', 'admin@admin.com', '', 'm0vyKu2zW7L8PTG20bquF.707e055aeea8a30aca', 1541329145, '9M0SinsEBUuvB84r8JCLse', 1268889823, 1647347357, 1, 'Admin', 'istrator', 'ADMIN', '0', 0, 'd4a6a70372809d140297689f8d880319.jpg'),
-(12, '::1', 'yusufxyz114@gmail.com', '$2y$08$BR2ZZlKEWSkL1UFzuPc9eOgSIhmtYAr6f4VslnKLEnEP85bv0SSyi', NULL, '1213', NULL, NULL, NULL, NULL, 1646585215, 1647348181, 1, '', '', '', '', 0, '7e1b6d3bb364ae941c3df865ed12fe8b.jpeg'),
-(14, '::1', 'harianto@gmail.com', '$2y$08$3905T9R3LaFcJsOpS/0klu1agRD.ugQqVRmsWAqr.3UiqX4Olk8Ce', NULL, 'harianto@gmail.com', NULL, NULL, NULL, NULL, 1646949545, 1646976181, 1, 'Harianto', 'Purnomo', 'd', '00', 0, '');
+(1, '127.0.0.1', 'administrator', '$2y$08$mr9S/fF7pRzaQNd6KGHGkOATYnjBkZal85.Sk3XeO6uqTmftcNriq', '', 'admin@admin.com', '', 'm0vyKu2zW7L8PTG20bquF.707e055aeea8a30aca', 1541329145, '9M0SinsEBUuvB84r8JCLse', 1268889823, 1647754295, 1, 'Admin', 'istrator', 'ADMIN', '0', 0, 'd4a6a70372809d140297689f8d880319.jpg'),
+(12, '::1', 'yusufxyz114@gmail.com', '$2y$08$BR2ZZlKEWSkL1UFzuPc9eOgSIhmtYAr6f4VslnKLEnEP85bv0SSyi', NULL, '1213', NULL, NULL, NULL, NULL, 1646585215, 1647745322, 1, '', '', '', '', 0, '7e1b6d3bb364ae941c3df865ed12fe8b.jpeg'),
+(14, '::1', 'harianto@gmail.com', '$2y$08$3905T9R3LaFcJsOpS/0klu1agRD.ugQqVRmsWAqr.3UiqX4Olk8Ce', NULL, 'harianto@gmail.com', NULL, NULL, NULL, NULL, 1646949545, 1647748792, 1, 'Harianto', 'Purnomo', 'd', '00', 0, '');
 
 -- --------------------------------------------------------
 
@@ -438,7 +427,7 @@ ALTER TABLE `laporan_kinerja`
 -- AUTO_INCREMENT for table `login_attempts`
 --
 ALTER TABLE `login_attempts`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `menu`
