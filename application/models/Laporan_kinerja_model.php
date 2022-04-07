@@ -41,6 +41,7 @@ class Laporan_kinerja_model extends CI_Model
 
     // get data with limit and search
     function get_limit_data($limit, $start = 0, $q = NULL) {
+        $this->db->select('*, laporan_kinerja.id as "lk_id"');
         $this->db->join('nilai', "nilai.id_laporan_kinerja=laporan_kinerja.id","left");
         $this->db->join('kategori', "kategori.id=nilai.id_kategori","left");
         $this->db->order_by($this->id, $this->order);

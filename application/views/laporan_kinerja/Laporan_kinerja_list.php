@@ -63,9 +63,9 @@
                 <td><?php echo $laporan_kinerja->laporan ?></td>
                 <td style="text-align:center" width="200px">
 				<?php 
-				echo anchor(site_url('laporan_kinerja/update/'.$laporan_kinerja->id),' <i class="fa fa-edit"></i>', 'class="btn btn-xs btn-warning" data-toggle="tooltip" title="Edit"'); 
+				echo anchor(site_url('laporan_kinerja/update/'.$laporan_kinerja->lk_id),' <i class="fa fa-edit"></i>', 'class="btn btn-xs btn-warning" data-toggle="tooltip" title="Edit"'); 
 				echo ' '; 
-				echo anchor(site_url('laporan_kinerja/delete/'.$laporan_kinerja->id),' <i class="fa fa-trash"></i>','class="btn btn-xs btn-danger" onclick="javasciprt: return confirmdelete(\'laporan_kinerja/delete/'.$laporan_kinerja->id.'\')"  data-toggle="tooltip" title="Delete" '); 
+				echo anchor(site_url('laporan_kinerja/delete/'.$laporan_kinerja->lk_id),' <i class="fa fa-trash"></i>','class="btn btn-xs btn-danger" onclick="javasciprt: return confirmdelete(\'laporan_kinerja/delete/'.$laporan_kinerja->id.'\')"  data-toggle="tooltip" title="Delete" '); 
 				?>
 			</td>
 		</tr>

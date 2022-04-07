@@ -32,7 +32,7 @@ class Laporan_kinerja extends CI_Controller
         $config['page_query_string'] = TRUE;
         $config['total_rows'] = $this->Laporan_kinerja_model->total_rows($q);
         $laporan_kinerja = $this->Laporan_kinerja_model->get_limit_data($config['per_page'], $start, $q);
-
+        echo $this->db->last_query();
         $this->load->library('pagination');
         $this->pagination->initialize($config);
 
