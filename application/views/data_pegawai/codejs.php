@@ -71,4 +71,9 @@
             document.getElementById("tanggal_sk_awal").value="";
         }
     }
+
+
+    $(document).ready(function(){
+		$('#table1').DataTable();
+	});
 </script>

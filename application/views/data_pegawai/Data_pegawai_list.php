@@ -46,7 +46,8 @@
             </div>
         </div>
         <form method="post" action="<?= site_url('data_pegawai/deletebulk');?>" id="formbulk">
-        <table class="table table-bordered" style="margin-bottom: 10px" style="width:100%">
+        <table class="table table-bordered" style="margin-bottom: 10px" style="width:100%" id="table1">
+        <thead>
             <tr>
                 <th style="width: 10px;"><input type="checkbox" name="selectall" /></th>
                 <th>No</th>
@@ -66,10 +67,11 @@
 		<th>Status Verif</th>
 		<th>Catatan Verif</th>
 		<th>Aksi</th>
-            </tr><?php
+            </tr></thead><?php
             foreach ($data_pegawai_data as $data_pegawai)
             {
                 ?>
+                <tbody>
                 <tr>
                 
 		<td  style="width: 10px;padding-left: 8px;"><input type="checkbox" name="id" value="<?= $data_pegawai->id;?>" />&nbsp;</td>
@@ -97,7 +99,7 @@
 				echo anchor(site_url('data_pegawai/delete/'.$data_pegawai->id),' <i class="fa fa-trash"></i>','class="btn btn-xs btn-danger" onclick="javasciprt: return confirmdelete(\'data_pegawai/delete/'.$data_pegawai->id.'\')"  data-toggle="tooltip" title="Delete" '); 
 				?>
 			</td>
-		</tr>
+		</tr></tbody>
                 <?php
             }
             ?>
