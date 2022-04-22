@@ -119,6 +119,7 @@ class Data_pegawai extends CI_Controller
         $data['crumb'] = [
             'Dashboard' => '',
         ];
+        $data['code_js'] = 'data_pegawai/codejs';
 
         $data['page'] = 'data_pegawai/Data_pegawai_form';
         $this->load->view('template/backend', $data);

@@ -20,7 +20,7 @@
         </div>
 	    <div class="form-group">
             <label for="varchar">NIK <?php echo form_error('nik') ?></label>
-            <input type="text" class="form-control" name="nik" id="nik" placeholder="NIK" value="<?php echo $nik; ?>" />
+            <input type="number" class="form-control" name="nik" id="nik" placeholder="NIK" value="<?php echo $nik; ?>" onchange="myFunction()"/>
         </div>
         <div class="form-group">
             <label for="enum">Jenis Kelamin <?php echo form_error('jk') ?></label>
@@ -36,7 +36,7 @@
         </div>
 	    <div class="form-group">
             <label for="varchar">Tanggal Lahir <?php echo form_error('tanggal_lahir') ?></label>
-            <input type="text" class="form-control" name="tanggal_lahir" id="tanggal_lahir" placeholder="Tanggal Lahir" value="<?php echo $tanggal_lahir; ?>" />
+            <input type="date" class="form-control" name="tanggal_lahir" id="tanggal_lahir" placeholder="Tanggal Lahir" value="<?php echo $tanggal_lahir; ?>" />
         </div>
 
 	    <div class="form-group">
@@ -61,11 +61,11 @@
         </div>
 	    <div class="form-group">
             <label for="year">Tahun Lulus <?php echo form_error('tahun_lulus') ?></label>
-            <input type="number" class="form-control" name="tahun_lulus" id="tahun_lulus" placeholder="Tahun Lulus" value="<?php echo $tahun_lulus; ?>" />
+            <input type="text" class="form-control" name="tahun_lulus" id="tahun_lulus" placeholder="Tahun Lulus" value="<?php echo $tahun_lulus; ?>" />
         </div>
 	    <div class="form-group">
             <label for="varchar">Tanggal Sk Awal <?php echo form_error('tanggal_sk_awal') ?></label>
-            <input type="date" class="form-control" name="tanggal_sk_awal" id="tanggal_sk_awal" placeholder="Tanggal Sk Awal" value="<?php echo $tanggal_sk_awal; ?>" />
+            <input type="date" class="form-control" name="tanggal_sk_awal" id="tanggal_sk_awal" placeholder="Tanggal Sk Awal" value="<?php echo $tanggal_sk_awal; ?>" onchange="myFunction2()"/>
         </div>
 	    <div class="form-group">
             <label for="varchar">Tempat Tugas <?php echo form_error('tempat_tugas') ?></label>
@@ -73,7 +73,7 @@
         </div>
 	    <div class="form-group">
             <label for="varchar">No Hp <?php echo form_error('no_hp') ?></label>
-            <input type="text" class="form-control" name="no_hp" id="no_hp" placeholder="No Hp" value="<?php echo $no_hp; ?>" />
+            <input type="number" class="form-control" name="no_hp" id="no_hp" placeholder="No Hp" value="<?php echo $no_hp; ?>" />
         </div>
 	    <div class="form-group">
             <label for="varchar">Email <?php echo form_error('email') ?></label>

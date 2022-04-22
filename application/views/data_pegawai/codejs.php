@@ -48,5 +48,27 @@
         }
         return false;
     });
+
+    function myFunction() {
+        var x = document.getElementById("nik").value;
+        if(nik.length != 16){
+            alert("NIK harus teridiri dari 16 karakter!");
+            document.getElementById("nik").focus();
+        }
+    }
      
+    $('#tahun_lulus').datepicker({
+         minViewMode: 2,
+         format: 'yyyy'
+       });
+
+       function myFunction2() {
+        var x = document.getElementById("tanggal_sk_awal").value;
+        let result = x.substring(0,4);
+        var y = document.getElementById("tahun_lulus").value;
+        if(result < y){
+            alert("Tahun SK Awal tidak boleh dibawah tahun lulus!");
+            document.getElementById("tanggal_sk_awal").value="";
+        }
+    }
 </script>
