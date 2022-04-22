@@ -32,7 +32,7 @@ class Laporan_kinerja extends CI_Controller
         $config['page_query_string'] = TRUE;
         $config['total_rows'] = $this->Laporan_kinerja_model->total_rows($q);
         $laporan_kinerja = $this->Laporan_kinerja_model->get_limit_data($config['per_page'], $start, $q);
-        echo $this->db->last_query();
+        // echo $this->db->last_query();
         $this->load->library('pagination');
         $this->pagination->initialize($config);
 
@@ -109,6 +109,7 @@ class Laporan_kinerja extends CI_Controller
        {
            $data['laporan'] = $this->upload->data("file_name");
            $data['kegiatan'] = $this->input->post('kegiatan',TRUE);
+           $data['id_pegawai'] = $this->ion_auth->user()->row()->id;
            $this->db->insert('laporan_kinerja',$data);
 
            $data2['id_laporan_kinerja'] = $this->db->insert_id();
