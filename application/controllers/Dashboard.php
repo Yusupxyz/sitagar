@@ -20,6 +20,7 @@ class Dashboard extends CI_Controller {
         //$this->layout->set_privilege(1);
 		$data['total_data'] = $this->Data_pegawai_model->count_all()->total;
 		$data['total_verif'] = $this->Data_pegawai_model->count_verif_all()->total;
+		// echo $this->db->last_query();
 		$data['total_nonverif'] = $this->Data_pegawai_model->count_nonverif_all()->total;
 
         $data['code_js'] = 'Dashboard/codejs';

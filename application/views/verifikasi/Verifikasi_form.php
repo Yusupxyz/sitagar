@@ -28,7 +28,7 @@
                 <option value="">-Pilih Status Verifikasi-</option>
                 <option value="0" <?= $status_verif=='0'?'selected':'' ?>>Belum Terverifikasi</option>
                 <option value="1" <?= $status_verif=='1'?'selected':'' ?>>Salah/Belum Lengkap</option>
-                <option value="1" <?= $status_verif=='2'?'selected':'' ?>>Terverifikasi</option>
+                <option value="2" <?= $status_verif=='2'?'selected':'' ?>>Terverifikasi</option>
             </select>
         </div>
 	    <div class="form-group">
