@@ -8,7 +8,7 @@ class Kategori_model extends CI_Model
 
     public $table = 'kategori';
     public $id = 'id';
-    public $order = 'DESC';
+    public $order = 'ASC';
 
     function __construct()
     {

@@ -10,9 +10,17 @@
               <button type="button" class="btn btn-box-tool" onclick="location.reload()" title="Refresh">
               <i class="fa fa-refresh"></i></button>
           </div>
-      </div>
-
+    
       <div class="box-body">
+      </div>
+        <div class="alert alert-info" role="alert">
+        <h4>Range Nilai</h4>
+        <?php foreach ($kategori as $key => $value) {
+            echo $value->kategori.' - '.$value->keterangan.' ('.$value->min.'-'.$value->max.')<br>';
+        }
+        ?>
+        </div>
+       
         <div class="row" style="margin-bottom: 10px">
             <div class="col-md-4">
             </div>
@@ -45,7 +53,9 @@
         <table class="table table-bordered" style="margin-bottom: 10px" style="width:100%">
             <tr>
                 <th>No</th>
+                <th>Nama Pegawai</th>
                 <th>Kegiatan</th>
+                <th>Tanggal Pelaporan</th>
                 <th>Laporan</th>
                 <th>Nilai Kinerja</th>
                 <th>Aksi</th>
@@ -57,7 +67,9 @@
                 
 			<td width="80px">
                 <?php echo ++$start ?></td>
+                <td><?php echo $laporan_kinerja->nama ?></td>
                 <td><?php echo $laporan_kinerja->kegiatan ?></td>
+                <td><?php echo $laporan_kinerja->tgl ?></td>
                 <td><a target="_blank" href="<?php echo site_url('./assets/uploads/laporan/'.$laporan_kinerja->laporan) ?>" class="link-primary">Lihat Berkas Laporan</a></td>
                 <td><?php echo $laporan_kinerja->skor." (".$laporan_kinerja->kategori." - ".$laporan_kinerja->keterangan.")" ?><br>
                 <a target="_blank" href="<?php echo site_url('nilai/read/'.$laporan_kinerja->id_laporan_kinerja) ?>" class="link-primary">Lihat Detail Nilai</a>

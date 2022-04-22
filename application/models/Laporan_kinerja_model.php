@@ -44,10 +44,11 @@ class Laporan_kinerja_model extends CI_Model
         $this->db->select('*, laporan_kinerja.id as "lk_id"');
         $this->db->join('nilai', "nilai.id_laporan_kinerja=laporan_kinerja.id","left");
         $this->db->join('kategori', "kategori.id=nilai.id_kategori","left");
+        $this->db->join('data_pegawai', "laporan_kinerja.id_pegawai=data_pegawai.id","left");
         $this->db->order_by($this->id, $this->order);
-	$this->db->or_like('kegiatan', $q);
-	$this->db->or_like('laporan', $q);
-	$this->db->limit($limit, $start);
+        $this->db->or_like('kegiatan', $q);
+        $this->db->or_like('laporan', $q);
+        $this->db->limit($limit, $start);
         return $this->db->get($this->table)->result();
     }
 

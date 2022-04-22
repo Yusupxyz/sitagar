@@ -12,6 +12,7 @@ class Nilai_laporan_kinerja extends CI_Controller
         $this->layout->auth(); 
         $this->layout->auth_privilege($c_url);
         $this->load->model('Laporan_kinerja_model');
+        $this->load->model('Kategori_model');
         $this->load->library('form_validation');
     }
 
@@ -32,7 +33,7 @@ class Nilai_laporan_kinerja extends CI_Controller
         $config['page_query_string'] = TRUE;
         $config['total_rows'] = $this->Laporan_kinerja_model->total_rows($q);
         $laporan_kinerja = $this->Laporan_kinerja_model->get_limit_data($config['per_page'], $start, $q);
-        echo $this->db->last_query();
+        // echo $this->db->last_query();
 
         $this->load->library('pagination');
         $this->pagination->initialize($config);
@@ -44,6 +45,7 @@ class Nilai_laporan_kinerja extends CI_Controller
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
+        $data['kategori'] = $this->Kategori_model->get_all();
         $data['title'] = 'Nilai Laporan Kinerja';
         $data['subtitle'] = '';
         $data['crumb'] = [
